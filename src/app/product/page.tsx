@@ -1,12 +1,10 @@
 "use client";
 
 import { Navigation } from "@/components/navigation";
-import { TextReveal } from "@/components/ui/text-reveal";
 import { CardHover } from "@/components/ui/card-hover";
 import { MovingBorder } from "@/components/ui/moving-border";
 import { useRef, useState } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
-import Link from "next/link";
 
 export default function ProductPage() {
   const ref = useRef(null);
@@ -163,7 +161,7 @@ export default function ProductPage() {
                 <p className="text-green-400">$ termcrawl analyze</p>
                 <p>Analyzing screen content...</p>
                 <p>Found: Text editor with code, browser with documentation, terminal window.</p>
-                <p className="text-green-400">$ termcrawl ask "What's the function in my editor doing?"</p>
+                <p className="text-green-400">$ termcrawl ask What the function in my editor doing?</p>
                 <p>Based on your screen, I can see a JavaScript function that handles API requests with error handling and data transformation. It appears to be fetching user data and formatting it for display.</p>
               </div>
             </motion.div>
@@ -287,7 +285,7 @@ from ai_assistant import Assistant
 async def main():
     # Initialize the assistant
     assistant = Assistant(
-        model_choice="Gemini",  # or "OpenAI"
+        model_choice=&quot;Gemini&quot;,  # or &quot;OpenAI&quot;
         api_key=None,  # Will use environment variable
         role="General"
     )
