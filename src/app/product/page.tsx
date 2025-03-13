@@ -250,7 +250,7 @@ export default function ProductPage() {
               {activeTab === 'install' && (
                 <div className="space-y-4">
                   <h3 className="text-xl font-semibold mb-4">Installation</h3>
-                  <p className="text-gray-400 mb-4">Install Termcrawl using npm or yarn:</p>
+                  <p className="text-gray-400 mb-4">Install Termcrawl using git:</p>
                   <div className="bg-black rounded-lg p-4 font-mono text-sm">
                     <pre className="text-gray-300">
                       # Using Git<br/>
