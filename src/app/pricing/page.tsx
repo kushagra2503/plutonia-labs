@@ -4,7 +4,6 @@ import { Navigation } from "@/components/navigation";
 import { TextReveal } from "@/components/ui/text-reveal";
 import { CardHover } from "@/components/ui/card-hover";
 import { MovingBorder } from "@/components/ui/moving-border";
-import { Vortex } from "@/components/ui/vortex";
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 
@@ -26,15 +25,6 @@ export default function PricingPage() {
     <>
       <Navigation />
       <div className="min-h-screen relative overflow-hidden" ref={containerRef}>
-        {/* Vortex UI background */}
-        <Vortex 
-          containerClassName="absolute inset-0 z-0" 
-          backgroundColor="#000000"
-          baseHue={220}
-          particleCount={700}
-          baseRadius={1}
-          rangeRadius={10}
-        />
         
         <div className="max-w-7xl mx-auto relative z-10 py-20 px-4">
           {/* Animated Header - Optimized with fewer animations */}

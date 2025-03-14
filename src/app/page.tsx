@@ -1,4 +1,4 @@
-// @ts-nocheck
+
 "use client";
 
 import { Navigation } from "@/components/navigation";
