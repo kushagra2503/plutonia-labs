@@ -253,7 +253,7 @@ export default function ProductPage() {
                   <p className="text-gray-400 mb-4">Install Termcrawl using git:</p>
                   <div className="bg-black rounded-lg p-4 font-mono text-sm">
                     <pre className="text-gray-300">
-                      # Using Git<br/>
+                      # Using Git<br/><br/>
                       pip install git+https://github.com/kushagra2503/ai_assistant_pkg.git<br/>
                     </pre>
                   </div>
@@ -272,7 +272,7 @@ export default function ProductPage() {
                   <p className="text-gray-400 mb-4">Start using Termcrawl with these simple commands on your terminal after installation:</p>
                   <div className="bg-black rounded-lg p-4 font-mono text-sm">
                     <pre className="text-gray-300">
-                      # Start Termcrawl in your terminal<br/>
+                      # Start Termcrawl in your terminal<br/><br/>
                       ai-assistant<br/><br/>
                     </pre>
                   </div>

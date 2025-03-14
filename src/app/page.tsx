@@ -24,7 +24,7 @@ export default function Home() {
         {/* Hero Section */}
         <div className="text-center max-w-4xl mx-auto space-y-9 mb-20 relative z-10 ">
           <TextReveal
-            text="We Make AI Agents Do Your Job "
+            text="Let AI Agents Scrape Your Screen"
             className="text-5xl md:text-6xl font-bold tracking-tight"
           />
           <TextReveal
