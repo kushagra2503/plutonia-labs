@@ -63,7 +63,7 @@ export const MovingBorder = ({
       />
       <div
         className={cn(
-          "relative z-20 bg-black",
+          "relative z-20 bg-gray-900",
           className
         )}
         style={{

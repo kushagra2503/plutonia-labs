@@ -8,10 +8,12 @@ export const CardHover = ({
   children,
   className,
   containerClassName,
+  hoverClassName,
 }: {
   children: React.ReactNode;
   className?: string;
   containerClassName?: string;
+  hoverClassName?: string;
 }) => {
   const [isHovered, setIsHovered] = useState(false);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -29,24 +31,29 @@ export const CardHover = ({
   return (
     <motion.div
       ref={cardRef}
-      className={cn(
-        "relative w-full h-full rounded-xl overflow-hidden bg-transparent",
-        containerClassName
-      )}
+      className={cn("relative", containerClassName)}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
       onMouseMove={handleMouseMove}
     >
       <motion.div
-        className="absolute inset-0 bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500 opacity-0 transition-opacity duration-300"
+        className={cn(
+          "relative h-full w-full rounded-xl transition-all duration-200",
+          className,
+          isHovered && hoverClassName
+        )}
         style={{
-          opacity: isHovered ? 0.15 : 0,
-          background: `radial-gradient(circle at ${mousePosition.x * 100}% ${
-            mousePosition.y * 100
-          }%, rgba(79, 70, 229, 0.3) 0%, transparent 60%)`,
+          transformStyle: "preserve-3d",
         }}
-      />
-      <div className={cn("relative z-10", className)}>{children}</div>
+        animate={{
+          rotateX: isHovered ? mousePosition.y * 20 - 10 : 0,
+          rotateY: isHovered ? mousePosition.x * 20 - 10 : 0,
+          scale: isHovered ? 1.02 : 1,
+        }}
+        transition={{ duration: 0.2 }}
+      >
+        {children}
+      </motion.div>
     </motion.div>
   );
 }; 

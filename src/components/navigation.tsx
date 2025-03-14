@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { cn } from "./ui/cn";
 import { motion } from "framer-motion";
@@ -17,10 +18,18 @@ export function Navigation() {
   return (
     <nav className="fixed top-0 inset-x-0 z-50 backdrop-blur-sm">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <div className="relative flex h-16 items-center justify-between">
+        <div className="relative flex h-20 items-center justify-between">
           <div className="flex items-center">
-            <Link href="/" className="text-xl font-bold">
-              Termcrawl.ai
+            <Link href="/" className="flex items-center">
+              <Image 
+                src="/logo.png" 
+                alt="Termcrawl.ai Logo" 
+                width={60} 
+                height={60} 
+                className="mr-3"
+                priority
+              />
+              <span className="text-2xl font-bold">Termcrawl.ai</span>
             </Link>
           </div>
           <div className="flex items-center gap-6">

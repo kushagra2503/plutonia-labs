@@ -3,6 +3,7 @@
 import { Navigation } from "@/components/navigation";
 import { CardHover } from "@/components/ui/card-hover";
 import { MovingBorder } from "@/components/ui/moving-border";
+import { SparklesCore } from "@/components/ui/sparkles";
 import { useRef, useState } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 
@@ -40,11 +41,25 @@ export default function ProductPage() {
           className="text-center z-10 px-4"
         >
           <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-purple-500 to-indigo-500">
-            Termcrawl
+             Presenting Termcrawl
           </h1>
           <p className="text-xl md:text-2xl text-gray-300 max-w-2xl mx-auto">
             AI Assistant That Sees What You See
           </p>
+          
+          {/* Sparkles effect */}
+          <div className="w-full  h-40 relative">
+            <SparklesCore
+              id="tsparticles"
+              background="transparent"
+              minSize={0.8}
+              maxSize={1.4}
+              particleColor="#FFFFFF"
+              particleDensity={100}
+              speed={2}
+              className="w-full h-full"
+            />
+          </div>
         </motion.div>
         
         {/* Background gradient */}
@@ -52,8 +67,8 @@ export default function ProductPage() {
         
         {/* Animated background grid */}
         <div className="absolute inset-0 bg-black z-[-1]">
-          <div className="absolute inset-0 opacity-50">
-            <div className="h-full w-full bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:14px_24px]"></div>
+          <div className="absolute inset-0 opacity-70">
+            <div className="h-full w-full bg-[linear-gradient(to_right,#6366f180_1px,transparent_1px),linear-gradient(to_bottom,#6366f180_1px,transparent_1px)] bg-[size:14px_24px]"></div>
           </div>
         </div>
       </div>
@@ -145,13 +160,13 @@ export default function ProductPage() {
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5 }}
               viewport={{ once: true }}
-              className="rounded-lg border border-gray-800 bg-gray-900/50 backdrop-blur-sm p-4 shadow-2xl"
+              className="rounded-lg border border-gray-800 bg-gray-950/70 backdrop-blur-sm p-4 shadow-2xl"
             >
               <div className="flex items-center gap-2 mb-4">
                 <div className="w-3 h-3 rounded-full bg-red-500"></div>
                 <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
                 <div className="w-3 h-3 rounded-full bg-green-500"></div>
-                <div className="ml-2 text-sm text-gray-400">termcrawl</div>
+                <div className="ml-2 text-sm text-gray-400">TermCrawl On Your Terminal</div>
               </div>
               <div className="font-mono text-sm text-gray-300 space-y-2">
                 <p className="text-green-400">$ ai-assistant</p>
@@ -170,7 +185,7 @@ export default function ProductPage() {
       </div>
 
       {/* Use Cases Section */}
-      <div className="py-20 px-4 bg-gradient-to-b from-black to-gray-900">
+      <div className="py-20 px-4 bg-black">
         <div className="max-w-7xl mx-auto">
           <motion.h2 
             initial={{ opacity: 0 }}
@@ -192,7 +207,7 @@ export default function ProductPage() {
                 viewport={{ once: true }}
                 className="relative group"
               >
-                <CardHover className="p-6 border border-gray-800 rounded-xl h-full">
+                <CardHover className="p-6 border border-gray-800 rounded-xl h-full bg-gray-950/50">
                   <div className="absolute inset-0 bg-gradient-to-r from-purple-500/5 to-indigo-500/5 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   <div className="relative space-y-4">
                     <div className="w-12 h-12 rounded-lg bg-indigo-500/10 flex items-center justify-center">
@@ -222,9 +237,9 @@ export default function ProductPage() {
           </p>
           
           {/* Documentation Card */}
-          <div className="border border-gray-800 rounded-xl overflow-hidden bg-gray-900/30 backdrop-blur-sm">
+          <div className="border border-gray-800 rounded-xl overflow-hidden bg-gray-950/50 backdrop-blur-sm">
             {/* Tabs */}
-            <div className="flex border-b border-gray-800">
+            <div className="flex border-b border-gray-700">
               <button 
                 className={`px-4 py-3 text-sm font-medium ${activeTab === 'install' ? 'bg-gray-800 text-white' : 'text-gray-400 hover:text-white'}`}
                 onClick={() => setActiveTab('install')}
@@ -251,7 +266,7 @@ export default function ProductPage() {
                 <div className="space-y-4">
                   <h3 className="text-xl font-semibold mb-4">Installation</h3>
                   <p className="text-gray-400 mb-4">Install Termcrawl using git:</p>
-                  <div className="bg-black rounded-lg p-4 font-mono text-sm">
+                  <div className="bg-gray-950 rounded-lg p-4 font-mono text-sm border border-gray-800">
                     <pre className="text-gray-300">
                       # Using Git<br/><br/>
                       pip install git+https://github.com/kushagra2503/ai_assistant_pkg.git<br/>
@@ -270,14 +285,14 @@ export default function ProductPage() {
                 <div className="space-y-4">
                   <h3 className="text-xl font-semibold mb-4">Basic Usage</h3>
                   <p className="text-gray-400 mb-4">Start using Termcrawl with these simple commands on your terminal after installation:</p>
-                  <div className="bg-black rounded-lg p-4 font-mono text-sm">
+                  <div className="bg-gray-950 rounded-lg p-4 font-mono text-sm border border-gray-800">
                     <pre className="text-gray-300">
                       # Start Termcrawl in your terminal<br/><br/>
                       ai-assistant<br/><br/>
                     </pre>
                   </div>
                   <p className="text-gray-400 mt-4">You can also use the TermCrawi Ai Assistant as a library in your codebase:</p>
-                  <div className="bg-black rounded-lg p-4 font-mono text-sm">
+                  <div className="bg-gray-950 rounded-lg p-4 font-mono text-sm border border-gray-800">
                     <pre className="text-gray-300">{`
 import asyncio
 from ai_assistant import Assistant
@@ -304,8 +319,8 @@ if __name__ == "__main__":
               {activeTab === 'config' && (
                 <div className="space-y-4">
                   <h3 className="text-xl font-semibold mb-4">Configuration</h3>
-                  <p className="text-gray-400 mb-4">Configure .env file if your using it as development mode<code className="bg-gray-800 px-1 py-0.5 rounded text-sm">.termcrawlrc</code> file in your home directory:</p>
-                  <div className="bg-black rounded-lg p-4 font-mono text-sm">
+                  <p className="text-gray-400 mb-4">Configure .env file if your using it as development mode<code className="bg-gray-700 px-1 py-0.5 rounded text-sm">.termcrawlrc</code> file in your home directory:</p>
+                  <div className="bg-gray-950 rounded-lg p-4 font-mono text-sm border border-gray-800">
                     <pre className="text-gray-300">
                       {`{
   "apiKey": "your-openai-api-key"
@@ -313,7 +328,7 @@ if __name__ == "__main__":
                     </pre>
                   </div>
                   <p className="text-gray-400 mt-4">Or set configuration via command line:</p>
-                  <div className="bg-black rounded-lg p-4 font-mono text-sm">
+                  <div className="bg-gray-950 rounded-lg p-4 font-mono text-sm border border-gray-800">
                     <pre className="text-gray-300">
                       termcrawl config set apiKey your-openai-api-key<br/>
                       termcrawl config set model gpt-4-vision

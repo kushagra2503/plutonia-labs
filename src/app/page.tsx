@@ -16,7 +16,7 @@ export default function Home() {
   return (
     <>
       <Navigation />
-      <div className="flex flex-col items-center justify-center min-h-screen py-20 px-4 relative">
+      <div className="flex flex-col items-center justify-center min-h-screen py-20 px-4 relative bg-black">
         <BackgroundLines className="absolute inset-0">
           <div className="absolute inset-0"></div>
         </BackgroundLines>
@@ -24,7 +24,7 @@ export default function Home() {
         {/* Hero Section */}
         <div className="text-center max-w-4xl mx-auto space-y-9 mb-20 relative z-10 ">
           <TextReveal
-            text="Let AI Agents Scrape Your Screen"
+            text="Let AI Scrape Your Screen "
             className="text-5xl md:text-6xl font-bold tracking-tight"
           />
           <TextReveal
