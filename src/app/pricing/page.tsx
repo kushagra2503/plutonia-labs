@@ -6,6 +6,11 @@ import { CardHover } from "@/components/ui/card-hover";
 import { MovingBorder } from "@/components/ui/moving-border";
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { cn } from "@/components/ui/cn";
+import Image from "next/image";
+import { useState } from "react";
 
 export default function PricingPage() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -20,6 +25,9 @@ export default function PricingPage() {
   const opacity = useTransform(scrollYProgress, [0, 0.2, 0.8], [0.8, 1, 0.8]);
   const translateY = useTransform(scrollYProgress, [0, 0.4], [30, 0]);
   const titleTranslate = useTransform(scrollYProgress, [0, 0.3], [0, -30]);
+
+  const pathname = usePathname();
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
     <>
