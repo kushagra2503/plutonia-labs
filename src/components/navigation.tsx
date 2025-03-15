@@ -39,7 +39,7 @@ export const Navigation = () => {
                 className="h-16 w-18 rounded-md"
                 style={styles.logoGlow}
               />
-              <span className="ml-3 text-xl font-bold text-white">Quack Query</span>
+              <span className="ml-3 text-xl font-bold text-white">QuackQuery</span>
             </Link>
           </div>
           
