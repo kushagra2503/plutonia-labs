@@ -14,10 +14,10 @@ export const metadata: Metadata = {
   description: "Pioneering the future of AI technology with cutting-edge research and solutions.",
   icons: {
     icon: [
-      { url: '/favicon.ico', sizes: '32x32' },
-      { url: '/logo.png', type: 'image/png', sizes: '192x192' }
+      { url: '/logowithoutBG.png', sizes: '48x48' },
+      { url: '/logowithoutBg.png', type: 'image/png', sizes: '192x192' }
     ],
-    apple: { url: '/favicon.ico', sizes: '180x180' },
+    apple: { url: '/logowithoutBg.ico', sizes: '180x180' },
   },
 };
 
@@ -29,11 +29,11 @@ export default function RootLayout({
   return (
     <html lang="en" className={cn("antialiased", inter.variable)}>
       <head>
-        <link rel="icon" href="/favicon.ico" sizes="32x32" />
-        <link rel="icon" href="/logo.png" type="image/png" sizes="192x192" />
+        <link rel="icon" href="/logowithoutBG.png" sizes="48x" />
+        <link rel="icon" href="/logowithoutBg.png" type="image/png" sizes="192x192" />
         <link rel="apple-touch-icon" href="/favicon.ico" sizes="180x180" />
       </head>
-      <body className="min-h-screen bg-black text-white">
+      <body className="min-h-screen bg-gray-900 text-white">
         <main className="relative flex min-h-screen flex-col">
           {children}
         </main>

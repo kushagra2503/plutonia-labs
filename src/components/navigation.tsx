@@ -12,25 +12,34 @@ const links = [
   { href: "/pricing", label: "Pricing" },
 ];
 
+// Add a CSS class for the glow effect
+const styles = {
+  logoGlow: {
+    filter: "drop-shadow(0 0 8px rgba(255, 255, 255, 0.4))",
+    transition: "all 0.3s ease"
+  }
+};
+
 export const Navigation = () => {
   const pathname = usePathname();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <nav className="bg-black/60 backdrop-blur-md border-b border-gray-800 fixed w-full z-50">
+    <nav className="bg-black/20 backdrop-blur-sm border-b border-gray-700 fixed w-full z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16">
           {/* Logo and site name */}
           <div className="flex items-center">
             <Link href="/" className="flex-shrink-0 flex items-center">
               <Image 
-                src="/logo.png" 
+                src="/logowithoutBg.png" 
                 alt="Termcrawl Logo" 
-                width={40} 
-                height={40}
-                className="h-8 w-8 rounded-md"
+                width={56} 
+                height={56}
+                className="h-12 w-12 rounded-md"
+                style={styles.logoGlow}
               />
-              <span className="ml-2 text-xl font-bold text-white">Termcrawl.ai</span>
+              <span className="ml-3 text-xl font-bold text-white">TermCrawl.ai</span>
             </Link>
           </div>
           
