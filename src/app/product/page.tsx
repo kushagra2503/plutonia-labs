@@ -4,10 +4,21 @@ import { Navigation } from "@/components/navigation";
 import { CardHover } from "@/components/ui/card-hover";
 import { MovingBorder } from "@/components/ui/moving-border";
 import { SparklesCore } from "@/components/ui/sparkles";
-import { useRef, useState } from "react";
+import { useRef, useState, useCallback } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 
 export default function ProductPage() {
+  // State for copy button feedback
+  const [copiedText, setCopiedText] = useState<string | null>(null);
+  
+  // Function to copy text to clipboard
+  const copyToClipboard = useCallback((text: string, id: string) => {
+    navigator.clipboard.writeText(text).then(() => {
+      setCopiedText(id);
+      setTimeout(() => setCopiedText(null), 2000); // Reset after 2 seconds
+    });
+  }, []);
+
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({
     target: ref,
@@ -266,16 +277,31 @@ export default function ProductPage() {
                 <div className="space-y-4">
                   <h3 className="text-xl font-semibold mb-4">Installation</h3>
                   <p className="text-gray-400 mb-4">Install QuackQuery using git:</p>
-                  <div className="bg-gray-950 rounded-lg p-4 font-mono text-sm border border-gray-800">
+                  <div className="bg-gray-950 rounded-lg p-4 font-mono text-sm border border-gray-800 relative group">
+                    <button 
+                      onClick={() => copyToClipboard("pip install quackquery", "install-pip")}
+                      className="absolute top-2 right-2 p-1 rounded-md bg-gray-800 hover:bg-gray-700 opacity-0 group-hover:opacity-100 transition-opacity"
+                      aria-label="Copy to clipboard"
+                    >
+                      {copiedText === "install-pip" ? (
+                        <svg className="w-5 h-5 text-green-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                        </svg>
+                      ) : (
+                        <svg className="w-5 h-5 text-gray-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3" />
+                        </svg>
+                      )}
+                    </button>
                     <pre className="text-gray-300">
-                      # Using Git<br/><br/>
-                      pip install git+https://github.com/kushagra2503/ai_assistant_pkg.git<br/>
+                      # Using pip<br/><br/>
+                      pip install quackquery<br/>
                     </pre>
                   </div>
                   <p className="text-gray-400 mt-4">System Requirements:</p>
                   <ul className="list-disc pl-5 text-gray-400 space-y-1">
                     <li>Python {'>='} 3.10 </li>
-                    <li>Git should be nstalled and set as path vairalbe in your system (for screen capture functionality)</li>
+                    <li>Pip should be installed and set as path vairalbe in your system (for screen capture functionality)</li>
                     <li>OpenAI API key and Gemini key  (for AI processing)</li>
                   </ul>
                 </div>
@@ -285,14 +311,60 @@ export default function ProductPage() {
                 <div className="space-y-4">
                   <h3 className="text-xl font-semibold mb-4">Basic Usage</h3>
                   <p className="text-gray-400 mb-4">Start using QuackQuery with these simple commands on your terminal after installation:</p>
-                  <div className="bg-gray-950 rounded-lg p-4 font-mono text-sm border border-gray-800">
+                  <div className="bg-gray-950 rounded-lg p-4 font-mono text-sm border border-gray-800 relative group">
+                    <button 
+                      onClick={() => copyToClipboard("quackquery", "usage-cmd")}
+                      className="absolute top-2 right-2 p-1 rounded-md bg-gray-800 hover:bg-gray-700 opacity-0 group-hover:opacity-100 transition-opacity"
+                      aria-label="Copy to clipboard"
+                    >
+                      {copiedText === "usage-cmd" ? (
+                        <svg className="w-5 h-5 text-green-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                        </svg>
+                      ) : (
+                        <svg className="w-5 h-5 text-gray-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3" />
+                        </svg>
+                      )}
+                    </button>
                     <pre className="text-gray-300">
-                      # Start QuackQuery in your terminal<br/><br/>
-                      ai-assistant<br/><br/>
+                      # Start QuackQuery  n your terminal with this command<br/><br/>
+                      quackquery<br/><br/>
                     </pre>
                   </div>
                   <p className="text-gray-400 mt-4">You can also use the QuackQuery Ai Assistant as a library in your codebase:</p>
-                  <div className="bg-gray-950 rounded-lg p-4 font-mono text-sm border border-gray-800">
+                  <div className="bg-gray-950 rounded-lg p-4 font-mono text-sm border border-gray-800 relative group">
+                    <button 
+                      onClick={() => copyToClipboard(`import asyncio
+from ai_assistant import Assistant
+
+async def main():
+    # Initialize the assistant
+    assistant = Assistant(
+        model_choice="Gemini",  # or "OpenAI"
+        api_key=None,  # Will use environment variable
+        role="General"
+    )
+    
+    # Get a response
+    response = await assistant.answer_async("What is artificial intelligence?")
+    print(response)
+
+if __name__ == "__main__":
+    asyncio.run(main())`, "usage-python")}
+                      className="absolute top-2 right-2 p-1 rounded-md bg-gray-800 hover:bg-gray-700 opacity-0 group-hover:opacity-100 transition-opacity"
+                      aria-label="Copy to clipboard"
+                    >
+                      {copiedText === "usage-python" ? (
+                        <svg className="w-5 h-5 text-green-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                        </svg>
+                      ) : (
+                        <svg className="w-5 h-5 text-gray-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3" />
+                        </svg>
+                      )}
+                    </button>
                     <pre className="text-gray-300">{`
 import asyncio
 from ai_assistant import Assistant
@@ -300,7 +372,7 @@ from ai_assistant import Assistant
 async def main():
     # Initialize the assistant
     assistant = Assistant(
-        model_choice=&quot;Gemini&quot;,  # or &quot;OpenAI&quot;
+        model_choice="Gemini",  # or "OpenAI"
         api_key=None,  # Will use environment variable
         role="General"
     )
@@ -311,7 +383,7 @@ async def main():
 
 if __name__ == "__main__":
     asyncio.run(main())
-      `}</pre>
+                    `}</pre>
                   </div>
                 </div>
               )}
@@ -320,7 +392,24 @@ if __name__ == "__main__":
                 <div className="space-y-4">
                   <h3 className="text-xl font-semibold mb-4">Configuration</h3>
                   <p className="text-gray-400 mb-4">Configure .env file if your using it as development mode<code className="bg-gray-700 px-1 py-0.5 rounded text-sm">ai-assistant-pkg</code> file in your home directory:</p>
-                  <div className="bg-gray-950 rounded-lg p-4 font-mono text-sm border border-gray-800">
+                  <div className="bg-gray-950 rounded-lg p-4 font-mono text-sm border border-gray-800 relative group">
+                    <button 
+                      onClick={() => copyToClipboard(`{
+  "apiKey": "your-openai-api-key"
+}`, "config-json")}
+                      className="absolute top-2 right-2 p-1 rounded-md bg-gray-800 hover:bg-gray-700 opacity-0 group-hover:opacity-100 transition-opacity"
+                      aria-label="Copy to clipboard"
+                    >
+                      {copiedText === "config-json" ? (
+                        <svg className="w-5 h-5 text-green-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                        </svg>
+                      ) : (
+                        <svg className="w-5 h-5 text-gray-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3" />
+                        </svg>
+                      )}
+                    </button>
                     <pre className="text-gray-300">
                       {`{
   "apiKey": "your-openai-api-key"
@@ -328,7 +417,23 @@ if __name__ == "__main__":
                     </pre>
                   </div>
                   <p className="text-gray-400 mt-4">Or set configuration via command line:</p>
-                  <div className="bg-gray-950 rounded-lg p-4 font-mono text-sm border border-gray-800">
+                  <div className="bg-gray-950 rounded-lg p-4 font-mono text-sm border border-gray-800 relative group">
+                    <button 
+                      onClick={() => copyToClipboard(`QuackQuery config set apiKey your-openai-api-key
+QuackQuery config set model gpt-4-vision`, "config-cmd")}
+                      className="absolute top-2 right-2 p-1 rounded-md bg-gray-800 hover:bg-gray-700 opacity-0 group-hover:opacity-100 transition-opacity"
+                      aria-label="Copy to clipboard"
+                    >
+                      {copiedText === "config-cmd" ? (
+                        <svg className="w-5 h-5 text-green-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                        </svg>
+                      ) : (
+                        <svg className="w-5 h-5 text-gray-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3" />
+                        </svg>
+                      )}
+                    </button>
                     <pre className="text-gray-300">
                       QuackQuery config set apiKey your-openai-api-key<br/>
                       QuackQuery config set model gpt-4-vision
