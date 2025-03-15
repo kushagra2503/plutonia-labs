@@ -15,7 +15,7 @@ const links = [
 // Add a CSS class for the glow effect
 const styles = {
   logoGlow: {
-    filter: "drop-shadow(0 0 8px rgba(255, 255, 255, 0.4))",
+    filter: "drop-shadow(0 0 8px rgba(255, 255, 255, 0.8)) drop-shadow(0 0 16px rgba(255, 255, 255, 0.6)) brightness(1.3) contrast(1.1)",
     transition: "all 0.3s ease"
   }
 };
@@ -32,14 +32,14 @@ export const Navigation = () => {
           <div className="flex items-center">
             <Link href="/" className="flex-shrink-0 flex items-center">
               <Image 
-                src="/logowithoutBg.png" 
+                src="/duck.png" 
                 alt="Termcrawl Logo" 
                 width={56} 
                 height={56}
-                className="h-12 w-12 rounded-md"
+                className="h-16 w-18 rounded-md"
                 style={styles.logoGlow}
               />
-              <span className="ml-3 text-xl font-bold text-white">TermCrawl.ai</span>
+              <span className="ml-3 text-xl font-bold text-white">Quack Query</span>
             </Link>
           </div>
           

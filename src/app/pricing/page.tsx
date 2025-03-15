@@ -37,7 +37,7 @@ export default function PricingPage() {
           >
             <div className="text-center w-full mx-auto">
               <TextReveal
-                text="Termcrawl For Enterprise Users and Leading Startups"
+                text="QuackQuery For Enterprise Users and Leading Startups"
                 className="text-4xl md:text-5xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-purple-500 to-indigo-500 mx-auto"
               />
             </div>
@@ -161,7 +161,7 @@ export default function PricingPage() {
 
 const faqs = [
   {
-    question: "How do I get started with Termcrawl?",
+    question: "How do I get started with QuackQuery?",
     answer: "Simply contact the sales team and select a plan that fits your needs and sign up. Our onboarding team will guide you through the setup process and help you configure your first AI agents."
   },
   {

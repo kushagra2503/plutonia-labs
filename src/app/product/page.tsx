@@ -41,7 +41,7 @@ export default function ProductPage() {
           className="text-center z-10 px-4"
         >
           <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-purple-500 to-indigo-500">
-             Presenting Termcrawl
+             Presenting QuackQuery
           </h1>
           <p className="text-xl md:text-2xl text-gray-300 max-w-2xl mx-auto">
             AI Assistant That Sees What You See
@@ -96,7 +96,7 @@ export default function ProductPage() {
                 viewport={{ once: true }}
                 className="text-gray-400 text-lg"
               >
-                Termcrawl is a revolutionary terminal-based AI agent that scrapes your screen and uses the data to answer your queries based on what it sees in real-time.
+                QuackQuery is a revolutionary terminal-based AI agent that scrapes your screen and uses the data to answer your queries based on what it sees in real-time.
               </motion.p>
               
               <motion.div
@@ -166,17 +166,17 @@ export default function ProductPage() {
                 <div className="w-3 h-3 rounded-full bg-red-500"></div>
                 <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
                 <div className="w-3 h-3 rounded-full bg-green-500"></div>
-                <div className="ml-2 text-sm text-gray-400">TermCrawl On Your Terminal</div>
+                <div className="ml-2 text-sm text-gray-400">QuackQuery On Your Terminal</div>
               </div>
               <div className="font-mono text-sm text-gray-300 space-y-2">
                 <p className="text-green-400">$ ai-assistant</p>
-                <p>Initializing Termcrawl AI Assistant...</p>
+                <p>Initializing QuackQuery AI Assistant...</p>
                 <p>Screen capture module loaded.</p>
                 <p>AI model initialized.</p>
-                <p className="text-green-400">$ termcrawl analyze</p>
+                <p className="text-green-400">$ QuackQuery analyze</p>
                 <p>Analyzing screen content...</p>
                 <p>Found: Text editor with code, browser with documentation, terminal window.</p>
-                <p className="text-green-400">$ termcrawl ask What the function in my editor doing?</p>
+                <p className="text-green-400">$ QuackQuery ask What the function in my editor doing?</p>
                 <p>Based on your screen, I can see a JavaScript function that handles API requests with error handling and data transformation. It appears to be fetching user data and formatting it for display.</p>
               </div>
             </motion.div>
@@ -194,7 +194,7 @@ export default function ProductPage() {
             viewport={{ once: true }}
             className="text-3xl font-bold text-center mb-16"
           >
-            How Developers Use Termcrawl
+            How Developers Use QuackQuery
           </motion.h2>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -233,7 +233,7 @@ export default function ProductPage() {
         >
           <h2 className="text-3xl font-bold text-center mb-4">Documentation</h2>
           <p className="text-gray-400 text-center mb-12 max-w-2xl mx-auto">
-            Get started with Termcrawl in minutes. Follow our simple installation guide and start interacting with your screen content through AI.
+            Get started with QuackQuery in minutes. Follow our simple installation guide and start interacting with your screen content through AI.
           </p>
           
           {/* Documentation Card */}
@@ -265,7 +265,7 @@ export default function ProductPage() {
               {activeTab === 'install' && (
                 <div className="space-y-4">
                   <h3 className="text-xl font-semibold mb-4">Installation</h3>
-                  <p className="text-gray-400 mb-4">Install Termcrawl using git:</p>
+                  <p className="text-gray-400 mb-4">Install QuackQuery using git:</p>
                   <div className="bg-gray-950 rounded-lg p-4 font-mono text-sm border border-gray-800">
                     <pre className="text-gray-300">
                       # Using Git<br/><br/>
@@ -284,14 +284,14 @@ export default function ProductPage() {
               {activeTab === 'usage' && (
                 <div className="space-y-4">
                   <h3 className="text-xl font-semibold mb-4">Basic Usage</h3>
-                  <p className="text-gray-400 mb-4">Start using Termcrawl with these simple commands on your terminal after installation:</p>
+                  <p className="text-gray-400 mb-4">Start using QuackQuery with these simple commands on your terminal after installation:</p>
                   <div className="bg-gray-950 rounded-lg p-4 font-mono text-sm border border-gray-800">
                     <pre className="text-gray-300">
-                      # Start Termcrawl in your terminal<br/><br/>
+                      # Start QuackQuery in your terminal<br/><br/>
                       ai-assistant<br/><br/>
                     </pre>
                   </div>
-                  <p className="text-gray-400 mt-4">You can also use the TermCrawi Ai Assistant as a library in your codebase:</p>
+                  <p className="text-gray-400 mt-4">You can also use the QuackQuery Ai Assistant as a library in your codebase:</p>
                   <div className="bg-gray-950 rounded-lg p-4 font-mono text-sm border border-gray-800">
                     <pre className="text-gray-300">{`
 import asyncio
@@ -319,7 +319,7 @@ if __name__ == "__main__":
               {activeTab === 'config' && (
                 <div className="space-y-4">
                   <h3 className="text-xl font-semibold mb-4">Configuration</h3>
-                  <p className="text-gray-400 mb-4">Configure .env file if your using it as development mode<code className="bg-gray-700 px-1 py-0.5 rounded text-sm">.termcrawlrc</code> file in your home directory:</p>
+                  <p className="text-gray-400 mb-4">Configure .env file if your using it as development mode<code className="bg-gray-700 px-1 py-0.5 rounded text-sm">ai-assistant-pkg</code> file in your home directory:</p>
                   <div className="bg-gray-950 rounded-lg p-4 font-mono text-sm border border-gray-800">
                     <pre className="text-gray-300">
                       {`{
@@ -330,8 +330,8 @@ if __name__ == "__main__":
                   <p className="text-gray-400 mt-4">Or set configuration via command line:</p>
                   <div className="bg-gray-950 rounded-lg p-4 font-mono text-sm border border-gray-800">
                     <pre className="text-gray-300">
-                      termcrawl config set apiKey your-openai-api-key<br/>
-                      termcrawl config set model gpt-4-vision
+                      QuackQuery config set apiKey your-openai-api-key<br/>
+                      QuackQuery config set model gpt-4-vision
                     </pre>
                   </div>
                 </div>
@@ -348,7 +348,7 @@ if __name__ == "__main__":
 const useCases = [
   {
     title: "Code Understanding",
-    description: "Ask questions about code on your screen without copying and pasting. Termcrawl sees your code and explains it in context.",
+    description: "Ask questions about code on your screen without copying and pasting. QuackQuery sees your code and explains it in context.",
     icon: (
       <svg className="w-6 h-6 text-indigo-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
@@ -357,7 +357,7 @@ const useCases = [
   },
   {
     title: "Data Analysis",
-    description: "Point Termcrawl at charts, spreadsheets, or data visualizations and get instant insights without manual data entry.",
+    description: "Point QuackQuery at charts, spreadsheets, or data visualizations and get instant insights without manual data entry.",
     icon: (
       <svg className="w-6 h-6 text-purple-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
@@ -366,7 +366,7 @@ const useCases = [
   },
   {
     title: "Documentation Helper",
-    description: "Have complex documentation open? Ask Termcrawl to summarize or explain specific sections without switching context.",
+    description: "Have complex documentation open? Ask QuackQuery to summarize or explain specific sections without switching context.",
     icon: (
       <svg className="w-6 h-6 text-indigo-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
