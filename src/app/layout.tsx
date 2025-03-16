@@ -10,7 +10,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Termcrawl.ai - AI Agentic Solutions",
+  title: "QuackQuery - Automate your tasks with Quack",
   description: "Pioneering the future of AI technology with cutting-edge research and solutions.",
   icons: {
     icon: [
