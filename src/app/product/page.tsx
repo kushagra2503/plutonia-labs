@@ -107,7 +107,7 @@ export default function ProductPage() {
                 viewport={{ once: true }}
                 className="text-gray-400 text-lg"
               >
-                QuackQuery is a revolutionary terminal-based AI agent that scrapes your screen and uses the data to answer your queries based on what it sees in real-time.
+                QuackQuery is a revolutionary terminal-based AI agent that scrapes your screen and uses the data to answer your queries and automate tasks based on what it sees in real-time.
               </motion.p>
               
               <motion.div
@@ -119,12 +119,13 @@ export default function ProductPage() {
                 <h3 className="text-xl font-semibold mb-3">Key Features</h3>
                 <ul className="space-y-2">
                   {[
-                    "Real-time screen analysis",
-                    "Terminal integration",
-                    "Contextual responses based on visual data",
-                    "Privacy-focused (processes data locally)",
-                    "Works with any application or website",
-                    "Customizable AI responses"
+                    "Real-time Screen Analysis",
+                    "Terminal  And Different Apps Integrations",
+                    "Contextual Responses Based On Visual Data",
+                    "Privacy-Focused (Processes Data Locally)",
+                    "Works With Any Application Or Website",
+                    "Customizable AI Responses",
+                    "Local System Tasks Automation"
                   ].map((feature, i) => (
                     <motion.li 
                       key={i} 
@@ -328,7 +329,7 @@ export default function ProductPage() {
                       )}
                     </button>
                     <pre className="text-gray-300">
-                      # Start QuackQuery  n your terminal with this command<br/><br/>
+                      # Start QuackQuery on terminal<br/><br/>
                       quackquery<br/><br/>
                     </pre>
                   </div>
@@ -365,7 +366,7 @@ if __name__ == "__main__":
                         </svg>
                       )}
                     </button>
-                    <pre className="text-gray-300">{`
+                    <pre className="text-gray-300 overflow-x-auto whitespace-pre-wrap break-words max-w-full">{`
 import asyncio
 from ai_assistant import Assistant
 
@@ -434,7 +435,7 @@ QuackQuery config set model gpt-4-vision`, "config-cmd")}
                         </svg>
                       )}
                     </button>
-                    <pre className="text-gray-300">
+                    <pre className="text-gray-300 overflow-x-auto max-w-full">
                       QuackQuery config set apiKey your-openai-api-key<br/>
                       QuackQuery config set model gpt-4-vision
                     </pre>
